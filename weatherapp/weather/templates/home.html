@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet"  href="{% static 'css/style.css' %}">    
+
+    <title>Weather App!!</title>
+</head>
+<body>
+    <div id = "main">
+    <div class="weather">
+    <h1> whats the weather </h1>
+    <form method = "GET">
+        <label for="city"> </label>
+        <input type="text" name="city" id="city"><br>
+        <input type="submit" value="submit">
+    </form>
+    {% if result %}
+    <h3 >{{ result.region }}</h3>
+    <h3>{{ result.dayhour }}</h3>
+    <h3>{{ result.temp_now }}° C</h3>
+    <h3>{{ result.weather_now }}</h3>
+    {% endif %}
+    </div>
+    </div>
+</body>
+</html>
